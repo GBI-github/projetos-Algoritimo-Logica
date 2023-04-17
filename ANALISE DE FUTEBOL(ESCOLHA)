@@ -14,7 +14,7 @@ Inicio
    escreva("Quantos gols do Corinthia: ")
    leia(gl2)
    gol <- abs(gl1 - gl2)
-   escreval("DIFERENÇA: ", gol)
+   escreval("DIFERENÃ‡A: ", gol)
    escolha gol
       caso 0
          emp <- ("EMPATE")
