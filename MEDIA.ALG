@@ -12,7 +12,7 @@ Inicio
           escreva("mais um numero: ")
           leia(N2)
           N3 <- (N1 + N2) /2
-          escreva("a media entre ", N1, " e " , N2, " é igual a ", N3)
+          escreva("a media entre ", N1, " e " , N2, " Ã© igual a ", N3)
 
 
 Fimalgoritmo
