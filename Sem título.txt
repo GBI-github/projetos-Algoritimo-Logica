@@ -1,0 +1,50 @@
+matemática básica
+	ordem de procedência
+	1- () parênteses 		
+	2- ** exponencial
+	3- *, /, %, //, ! multiplicação, divisão, resto da divisão, divisão inteira, fatorial 
+	4- + e - subtração e adição
+	 
+	quando for calcular um problema lembra desses operadores como uma pirâmide de quatro andares parênteses em primeiro e etc.
+	
+1.1 - tudo que esta sobre parênteses vai ser calculado primeiro independente de quantos operadores tenha 
+1.2 - exponencial(**) 3**3 = 3 x 3 x 3 = 27 (o primeiro numero vai ser calculado por ele mesmo, dependendo da quantidade de vezes pedida )
+1.3 - na ordem de procedência(pirâmide) o multiplicador(*), divisor(/), resto da divisão(%), divisão inteira(//), fatorial (!) estão no mesmo andar da pirâmide
+
+	1.3 - divisão inteira(//) quando pedir a divisão inteira você vai dividir o problema normalmente mais n usara virgula exp. 
+		5/2 = 2 (2 x 2) = 4, (sobra 1) a divisão inteira e o resultado da divisão (5/2) que e 2
+		
+	1.3 - resto da divisão(%) o resto da divisão foi o que sobrou exp. 
+		5/2 = 2 (2 x 2) = 4, o resto da divisão e 1 que foi o que sobrou da divisão
+		
+	1.3 - fatorial(!) 5! = 5 x 4 x 3 x 2 x 1 = 120 o fatorial multiplica por todos os números na ordem decrescente 
+	
+1.4 - a mesma coisa para a adição(+) e subtração(-)  
+
+funções aritméticas
+	1- ab      (  valor absoluto ) 
+	2- RaizQ   (  Raiz Quadrada  )
+	3- espc    (  exponenciação  )
+	4- int     (      inteiro    )
+	5- pi      (        pi       )
+	6- seno    (       seno      )
+ 	7- cos     (       cos       )
+ 	8- tang    (       tang      ) 
+ 	9- GrauPRad(    GrauPRad     )
+ 	10- porc   (   porcentagem   )
+ 	
+1.1 - o valor absoluto e positivo então todo numero que estiver negativo vai pra positivo quando se pede o ab (valor absoluto) exp.
+	-1, -1.3, -19292387 -> 1, 1.3, 19292387
+1.2 - Raiz quadrada	o macete pra aprender raiz quadrada rápido e pratico exp. RaizQ de 841
+
+	1.2- ela não pode ser negativa se tiver negativa a resposta está errada
+	
+	1.2- RaizQ de 841
+		
+		a)27
+		b)28
+		c)29
+		d)30
+			pra achar a resposta rápido e simples calcula a ultima unidade por ela mesma e ver se procede com o enunciado exp.
+			7 X 7 = 49 (termina com 9 não bate)
+			   
