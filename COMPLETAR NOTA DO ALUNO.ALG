@@ -12,7 +12,7 @@ Inicio
       escreva("Quantos alunos tem na sala: ")
       leia(numero)
       enquanto (contador <= numero) faca
-        escreval(contador, " °ALUNO: ")
+        escreval(contador, " Â°ALUNO: ")
           contador <- contador + 1
       escreva("nome do aluno: ")
       leia(aluno)
