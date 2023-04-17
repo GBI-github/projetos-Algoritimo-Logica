@@ -1,4 +1,4 @@
-Algoritmo "nuero primo com estrutura de rep"
+Algoritmo "numero primo com estrutura de rep"
 
 
 Var
@@ -18,6 +18,6 @@ Inicio
       se (contdiv > 2) entao
          escreval(" o valor ", numero," nao e primo!")
       senao
-         escreval(" o valor ", numero, " é primo!")
+         escreval(" o valor ", numero, " Ã© primo!")
       fimse
 Fimalgoritmo
