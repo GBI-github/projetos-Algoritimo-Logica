@@ -1,0 +1,39 @@
+comandos de saída		
+	escreva: e o responsável por mostrar tudo que for escrito na tela
+	escreval: e o responsável por quebrar linha e mostra tudo em ordem sequenciais 
+	
+comando de entrada
+	leia: e o responsável por ler o "valor" escrito dentro dele 
+
+tipos primitivos 
+	inteiro: só aceita números inteiros exp.(1, -1, 0, 134)
+	real  : aceita números fracionados exp. (0.1, -8.4,7,8)
+	caractere: aceita tudo que esta dentro de " " exp. ("1", "amigo", "0,4")
+	logico: aceita real ou falso
+
+ordem de procedência
+	1- () parênteses 		
+	2- ^  exponencial
+	3- *, /, %, //,  multiplicação, divisão, resto da divisão, divisão inteira, 
+	4- + e - subtração e adição 
+
+funções aritméticas
+	1- ab      (  valor absoluto ) 
+	2- RaizQ   (  Raiz Quadrada  )
+	3- espc    (  exponenciação  )
+	4- int     (      inteiro    )
+	5- pi      (        pi       )
+	6- seno    (       seno      )
+ 	7- cos     (       cos       )
+ 	8- tang    (       tang      ) 
+ 	9- GrauPRad(    GrauPRad     )	
+ 
+estruturas condicionais simples
+	1- se: e necessário pra criar uma variável exp.
+		se a "resposta" for igual a sim (então)
+	2- então: complemento da variável "se", o então e o responsável por da continuidade em caso da variável se cumprir exp.
+		se a "resposta" for igual a sim (então) de 3 passos a direita
+		(fimse)
+	3-fimse e ele que termina a determinada ação com o fimse você esta dizendo que a variável acabou
+	
+	4- senão: ação contraditória ao se (caso a variável não esteja de acordo com o se ele ira rodar no senao)
