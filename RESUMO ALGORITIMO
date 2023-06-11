@@ -1,0 +1,701 @@
+Autor: João Gabriel
+Linguagem: ALGORITIMO
+
+COMANDO DE SAIDA:	
+	
+	escreva: e o responsável por mostrar tudo que for escrito na tela
+	escreval: e o responsável por quebrar linha e mostra tudo em ordem sequenciais  
+	
+COMANDO DE ENTRADA:
+
+	leia: e o responsável por ler o "valor" escrito dentro dele 
+
+TIPOS PRIMITIVOS:
+
+	inteiro: só aceita números inteiros exp.(1, -1, 0, 134)
+	real  : aceita números fracionados exp. (0.1, -8.4,7,8)
+	caractere: aceita tudo que esta dentro de " " exp. ("1", "amigo", "0,4")
+	logico: aceita real ou falso
+
+ORDEM DE PROCEDENCIA:
+
+	1- () parênteses 		
+	2- ^  exponencial
+	3- *, /, %, //,  multiplicação, divisão, resto da divisão, divisão inteira, 
+	4- + e - subtração e adição 
+
+DECLARAR VARIAVEIS:
+
+	1- ":" usando dois pontos e um valor numérico após uma variável você consegue definir a quantidade de espaços que ele vai dar (gab:3 "a" gab'''a)
+	2- "=" igual símbolo que representa igualdade (se- vet[1] = vet[2])
+	3- "<>" ou "!="  diferente símbolo pra demostrar diferença (se- vet[1] <> vet[2] )
+
+FUNÇOES ARITIMETRICAS:
+
+	1- ab      (  valor absoluto ) 
+	2- RaizQ   (  Raiz Quadrada  )
+	3- espc    (  exponenciação  )
+	4- int     (      inteiro    )
+	5- pi      (        pi       )
+	6- seno    (       seno      )
+ 	7- cos     (       cos       )
+ 	8- tang    (       tang      ) 
+ 	9- GrauPRad(    GrauPRad     )	
+ 
+ESTRUTURAS CONDICIONAIS SIMPLES:
+
+	1- se: e necessário pra criar uma variável exp.
+		se a "resposta" for igual a sim (então)
+	2- então: complemento da variável "se", o então e o responsável por da continuidade em caso da variável se cumprir exp.
+		se a "resposta" for igual a sim (então) de 3 passos a direita
+		(fimse)
+	3-fimse e ele que termina a determinada ação com o fimse você esta dizendo que a variável acabou
+	
+ESTRUTURAS CONNDICIONAS COMPOSTAS :
+	
+	1-se a "resposta" for igual a "sim" (então)
+		escreval(dei 3 passos a direita)
+	2-senão: ação contraditória ao (se) 
+		escreval(Nao dei nenhum passo)
+		
+ESTRUTURAS ANINHADAS:
+
+	se a "resposta" for igual a "sim" (então)
+		escreval(dei 3 passos a direita)
+	senão 
+		se a "resposta" for igual a pra "frente" (então)
+		   escreval("dei 5 passos pra frente")
+		senão
+			se a "resposta" for igual a pra "trás" (então)
+			   escreval("dei 2 passos pra trás")
+			senão
+				se a "resposta" for igual a pra "esquerda" (então)
+				   escreval("dei 2 passos pra esquerda")
+				senão
+				   escreval("Nao entendi a sua ordem")
+				fimse
+			fimse
+		fimse
+	fimse 
+	3- cada estrutura e obrigada a ter seu (se), (senão) e (fimse), independente de quantos aninhamentos você pretende fazer
+	
+VARIAVEIS COMPOSTAS:
+
+	escolha: dentro de uma determinada ação composta por números "inteiros" o "escolha serve pra escolher uma das opções apresentadas exp:
+		escreval("opção [1] R$10") 
+		escreval("opção [2] R$20")
+		escreval("opção [3] R$30")
+		escreval("opção [4] R$40")
+		leia(op)(ele vai ler todas as condições acima e armazenar no D)	
+		escolha (op(lembrando que op estar armazenada como uma variável inteira é um valor inteiro))
+			(depois de apresentar as escolhas na tela do usuário ele vai escolher um numero que vai ser lido pelo "leia(op) " )
+			caso 1
+				op <- 10		
+		     caso 2
+				op <- 20
+			caso 3
+				op <- 30
+			caso 4
+				op <- 40
+			(cada numero escolhido vai cair em seu "caso" que parece com o "se", então se o numero escolhido for 1 vai cair no "caso 1" e assim por diante )
+			escreval("VALOR ESCOLHIDO FOI ", op)
+		fimescolha
+		(o fim escolha termina a ação)
+	
+ESTRUTURA DE REPETIÇÃO:
+
+	enquanto - pra repetir um processo você vai precisar usar o enquanto como variável, uma ação só vai ser terminada após respeitar todas as exigências da "estrutura de 	repetição"
+	faça - para a estrutura dar continuidade ela precisa de uma "chave" que conecte com a determinada ação pedida exp:
+		ação = 0 
+		enquanto (ação <= 5(menor ou igual a)) faça
+			ação <- ação + 1(faça ação receber ela mesma mais 1 ) 
+			escreval("ação(enquanto a ação for menor que 5 ela vai continuar repetindo essa estrutura e somando +1 ate a ação ter o valor requisitado)")
+		fimenquanto
+		
+ESTRUTURA DE REPETIÇÃO 2:, LEMBRETE-(PRA NUMEROS REGRESSIVOS TEM QUE ESTABELECER UM LIMETE DE NUMEROS POSITIVOS E NEGATIVO EXP "0")
+
+	somar valores - pra somar valores no enquanto você precisa determinar a quantidade de valores que vai ser somada exp:
+		var
+			ação, soma, valor: inteiro
+		inicio	
+			ação <- 1
+			soma <- 0
+			enquanto (ação <= 10(a ação vai somar 10 valores diferentes dada pelo usuário)) faça
+				ação <- ação + 1 ("faça" a "ação" receber ele mesmo mais 1, exp: 0+1, 1+1, 2+1 ate completar 10 giros ou "voltas")
+				escreval(ação, "° valor: "), (1°, 2°, 3°, 4° ate o 10°)
+				leia(valor)
+				soma <- soma + valor (soma + o valor, se na primeira ação o usuário deu "valor 10", então vai somar no "soma" e assim por diante ate acabar o 					looping)
+			fimenquanto
+			escreval("a soma dos 10 números deu em torno de", soma(a que vai aparecer a soma do 10 números escolhidos pelo usuário))
+		fiminicio
+
+ESTRUTURA DE REPETIÇÃO 3:
+
+	repita- repete uma determinada expressão "ate" ser concluída com uma determinada "orde" pra sair do looping exp:
+	
+		var
+	         	valor: inteiro
+		 	
+		inicio
+			repita
+				escreval("quanto é 2 + 2")
+				leia(valor)
+			ate (valor = 4)
+			
+		fiminicio
+	ate- o "ate" e o finalizador dessa determinada expressão, o repita so vai se concluída, quando a ordem emitida no "ate" ser completa
+
+ESTRUTURA DE REPETIÇÃO 4:
+
+	para- estrutura de repetição propriamente criada pra repetir uma determinada ação "x" vezes exp:
+	
+		var
+			c:inteiro
+		inicio
+			para c <-1 ate 10 faca
+				escreva(c)
+			fimpara
+			
+		fimalgoritimo	
+	para 2 - nesse caso a estrutura do "para" já e feito somente em uma linha, a forma que ele entra em looping é diferente, já que ele "para" toda vez que o "c" recebe 	uma nova atribuição exp:
+		
+		para c <- 1 ate 10
+		para c <- 2 ate 10
+		
+	para 3 - ele vai atribuindo um novo numero ate o "c" variável, alcançar o 10, e o que determina a quantidade de numero que vai ser adicionado no "c" variável, é o 	"passo" exp:
+		var
+			c: inteiro
+		inicio
+		
+			para c <-1 ate 10 passo 3 faca
+				escreva(c)
+			fimpara 
+			
+		fimalgoritimo
+	passo - no caso acima mostra bem como funciona o passo, ele e responsável por determinar a quantidade de números que a variável "c" vai pula
+	ate chegar em 10 exp:
+	
+		para c <- 1 ate 10 passo 3
+		para c <- 4 ate 10 passo 3
+		para c <- 7 ate 10 passo 3
+		para c <- 10 ate 10 
+		
+		fimpara
+		
+ESTRUTURA "ROTINA(PROCEDIMENTO)":
+
+	Procedimento repetitivo- você escreve um código, e guarda dentro de uma variável e pode usa-lo somente dentro do procedimento exp:
+		var
+		procedimento "maquina de moer()"
+		Inicio
+			"Verifique" a escotilha
+			"botão azul" opção 1
+			"olhe" pelo visor
+			"gire" a manivela
+			"botão azul" posição 2
+			"Gire" a manivela
+			"aperte" o botão vermelho
+		fimProcedimento
+		inicio
+			maquina de moer()
+			"coloque" a carne
+			maquina de moer()
+		fimalgoritimo
+		
+	Você acabou de criar um "procedimento" onde as ordens dadas(" "), estão todas armazenadas na "maquina de moer()", você vai poder usa-lo qua-
+	ntas vezes quiser, sem ter que ficar reescrevendo o mesmo código, procedimento e feito fora do var fora do inicio da estrutru(inicio -. fim
+	algoritmo)	
+	
+VARIAVEL "GLOBAL"
+
+	Variáveis GLOBAL são as variáveis que se cria fora de um procedimento, são variáveis que vão aparecer dentro ou fora do procedimento exp:
+		var(GLOBAL)
+		   N1: inteiro	
+		inicio
+			N1 <- 3
+			escreva(N1)
+		fimalgoritimo
+		
+	Nesse caso a variável "N1" vai aparecer como "GLOBAL" pois ela e feita fora do procedimento diferente da variável "LOCAL" exp:	
+		var(GLOBAL)
+		   N1: inteiro
+		procedimento rotina(A :inteiro)
+		var(LOCAL)
+		   X:inteiro
+		inicio
+			X <- A
+			escreva(A)
+			escreva(X)
+		fimprocedimento	
+		
+		inicio
+			N1 <- 3
+			escreva(N1)
+			rotina(N1)
+		fimalgoritimo
+	Como a variável (A) e a variável (X) estão dentro do procedimento elas vão ser intituladas variáveis "LOCAL", e só podem ser mostrada dentro
+	do procedimento se você tentar usar ela na variável "GLOBAL", ela nao irá funcionar por exp:
+		var(GLOBAL)
+		   N1: inteiro
+		procedimento rotina(A :inteiro)
+		var(LOCAL)
+		   X:inteiro
+		inicio
+			X <- A
+		fimprocedimento	
+		
+		inicio
+			N1 <- 3 
+			rotina(N1)
+			escreva(N1)
+			escreva(A)
+			escreva(X)
+		fimalgoritimo
+	Como o "escreva(A E X)" estão fora da variável "GLOBAL", ela nao vai ser encontrada, e vai dar erro pois elas pertencem a variável "LOCAL"
+	variável (GLOBAL) é a que engloba tudo dentro dela, procedimentos, bibliotecas e etc.
+
+ESTRUTURA ROTINA (FUNÇÃO)
+
+	diferente do "procedimento" que e uma estrutura criada somente pra uso dentro do "LOCAL" , a estrutura com "função", é o oposto, as variáveis criada
+	dentro dela pode ser usadas dentro do "GLOBAL", sem estar preso ao "LOCAL", tudo por causa do "retorna" que é a função responsável por retornar o valor
+	do "LOCAL" para o "GLOBAL" exp:
+		var
+		   n1, n2, soma: inteiro
+		função s(A , B: inteiro):inteiro
+		inicio
+		retorna <- A + B
+		fimfunção 
+		inicio
+			escreva("me informe um valor: ")
+			leia(n1)
+			escreva("me informe mais um numero")
+			leia(n2)
+			soma <- s(n1, n2)
+			escreva("o valor de", n1, "e", n2, "é igual a", soma)	
+		fiminicio
+		
+	nesse caso o "retorno" foi responsável por voltar o valor de "A + B" ao "GLOBAL" , diferente do "procedimento" onde o "soma" seria modificado e usado dentro do 	"LOCAL", a variável que vai ser levada pra função também diferencia já que ela vai precisar de duas variáveis um pra ser usado pela "função" e a outra pra ter o 	valor retornado exp:
+	
+		função soma(A, B:inteiro):inteiro
+		inicio
+			retorna <- A + B
+		fimfunção
+		inicio
+			s <- soma(	X, Y) x e y são os valores que subiram pra função e retornaram com seu valor no "s"
+			escreva(s)
+		fiminicio
+	o "s" e a variável que vai receber o valor retornado pela função, e o "soma" é a variável que vai ser usada pela função, na função se usa dois inteiros cada um com o 	objetivo diferente o "inteiro" dentro da "soma"  serve pra identificar  que A, B  são números inteiros, e o segundo inteiro e usado pra identificar que o numero que 	vai ser retornado e é inteiro , o mesmo acontece caso você queira retornar um valor "caractere" exp:
+		var
+		   n1: inteiro
+		   num: caractere		   
+		função n(A: inteiro): caractere
+		inicio
+			se A%2=0 então
+				retorne "PAR"
+			senão
+				retorne "IMPAR"
+			fimse
+		
+		inicio
+			escreva("me informe um numero: ")
+			leia(n1)
+			num <- n(n1)
+			escreva("o valor ", n1, "é", num) // par ou impar
+		fiminicio
+	como se é visto a variável "num" caractere, foi para a função e retornou também como uma caractere (se acontecer isso retorne "par" , se nao "impar")
+	
+FUNÇOES PRE-DEFINIDAS VIZUALG
+
+	As funções pré-definidas são auxiliadoras que evita a criação de determinadas funções essas são:
+		compr- essa e uma função que da o comprimento do "caractere", ela da a quantidade de números que determinada "caractere tem exp: "
+			compr(Gabriel)
+			compr = 7
+		Maiusc- essa função pega o "caractere" e joga pra maiúsculo exp:
+			maiusc(gab)
+			maiusc(GAB)
+		Minusc- essa função deixa o "caractere" em minúsculo exp:
+			minusc(GAB)
+			minusc(gab)
+		copia- essa função copia determinada "caractere" escolhida pelo usuário, o 1° numero determinar qual vai ser copiado, e o 2° quantos depois dele, e obrigatório 		ter o segundo numero pra determinar quantos caractere será copiado exp:
+			copia(Gabriel, 1, 3)
+			copia(Gab)
+		copia(compr)- tem como usar funções dentro de funções como esse exemplo pra saber a "caractere" de determinado nome exp:
+			copia(compr(Gabriel = 7) 7, 1)
+			copia(l)
+		pos- essa função indica a posição de determinada letra dentro do "caractere" exp:
+			pos(a, Gabriel)    
+			pos(2)
+		asc- essa função entrega o código de determinada letra, lembrando que letras maiúsculas e minúsculas tem posições diferentes exp:
+			asc(a)    asc(A)
+			asc(99)   asc(65)
+		carac- essa função e o oposto do asc exp:
+			carac(65) carac(99)
+			carac(A)  carac(a)
+			
+VARIAVEIS COMPOSTAS HOMOGENIAS DIMENCIONAIS:
+ 
+	as variáveis simples são aquelas que só guardam uma determinada variável dentro dela diferente das variáveis compostas, que guarda varias variáveis dentro dela 
+	exp:
+		n1: inteiro
+		n1 <- 3				
+	no caso do "n1" ele só pode aceitar uma variável "inteira" diferente das compostas exp:
+		n1: vetor[1..5] de inteiro
+		n1[1] <- 4
+		n1[2] <- 3
+		n1[3] <- 7
+		n1[4] <- 8
+		n1[5] <- 0
+		escreva(n1[5] = 0)
+	os números dentro do colchete determina a posição do determinado numero dentro do "n1", é só lembrar da estante, onde cada estante esta armazenada alguma coisa e 	nesse caso você estar acessando a 5° gaveta dessa estante composta.
+	
+	pra sabe as posições que um determinado numero esta e só por o "contador" dentro do "se" exp:	
+		var
+			v:vetor[1..5] de inteiro
+			c: inteiro
+		inicio
+			para c <- 1 ate 5 faca
+				escreva("me informe o " ,c, "° valor")
+				leia(v[c])
+				se (v[c] % 2= 0) então
+					escreva("os números pares estão nas posições ", c)
+				fimse
+			fimpara
+			
+		fimalgoritimo
+	pra saber as posições dos números pares as variáveis "v(vetor de 1 a 5)", iram passar pelo "se", e serão filtradas somente em números pares(%2=0), e por fim vai ser 	mostrado o contador(c) das variáveis pares do "v[c]", só vai descer os números onde o resultado do vetor seja positivo exp:
+		var
+			v: vetor[1..5] de inteiro
+			c: inteiro
+		inicio
+			para c <- 1 ate 5 faca
+			  v[c1]= 2
+			  v[c2]= 3
+			  v[c3]= 7
+			  v[c4]= 20
+			  v[c5]= 101
+			se (v[c] % 2= 0) então		 
+	      	 escreva("os números pares estão na ", c ,"° posição ")
+			  os números pares estão na 1° posição
+			  os números pares estão na 4° posição
+			fimse
+			  
+		fimalgoritimo	
+	
+	a posição do contador "c" só vai ser mostrada, quando a variável cumprir a demanda do "se"	
+	
+ESPAÇO EM BRANCO
+
+	se necessário use o ":" pra organizar uma determinada ação exp
+		nome: Gabriel:5, nota:4
+		nome: Gabriel    nota:4
+		
+	o ";5" foi responsável por determinar quanto espações em branco teve entra "nome: Gabriel" e "nota: 4"
+
+	guarde o numero numa variável simples "nome"
+	se esse "nome" começar com c então
+	soma vai ganhar um numero
+	e o vetor "v" vai armazenar um nome exp
+	
+		v:vetor[1..4]
+		para c <- 1 ate 4 faca
+			soma <- 0
+			leia(nome)
+			se (copia(nome, 1, 1)= "c") então
+			soma + 1
+			v[soma[1]] <- nome
+			fimpara
+			se a "copia" do nome começar com a letra "c" o vetor armazenara o nome dado no nesse determinado "para", e continuará armazenando ate o para 					acabar  
+	
+	vai ser criado um segundo "para" pra mostrar na interface todo os nome armazenados que começam com a letra "c" do primeiro "para" exp:
+
+		para c <- 1 ate soma faca
+			escreva(v[c])
+		fimpara
+	
+	dessa vez ele n vai ate o numero que tem no "vetor[1..4]", já que quando o vetor passou pelo "se", ele se limitou a quantidade de números dado pele "soma"
+
+ORDENAÇAO DE VETORES
+
+	na ordenação um vetor substitui o papel do outro perante uma determinada condição abaixo esta os valores dentro dos vetores exp:
+			vetor1[c]= 3
+			auxiliar = 0
+			vetor2[j]= 2
+		
+	pra ordenar esses valores e deixar numa ordem crescente, é preciso confirmar "se" o vetor1[c] e maior que o vetor2[j] e pra isso e necessário tirar o valor do 	"vetor2[1]= 2" e por no "vetor1[1] = 3" porem o "vetor1[1]= 3" já tem um valor incluído que é o "3", então eu vou ter que tirar esse valor e jogar pro auxiliar= 0 	que 	esta sem valor nele ficando exp:
+		se vetor1[c] > vetor2[j] então	
+			auxiliar = 0 <-------- vetor1[c] = 3
+			vetor1[c]= 0 <-------- vetor2[j] = 2
+			vetor2[j]= 0 <-------- auxiliar  = 3
+		
+	"vetor1[c]" perde o seu valor pro "auxiliar", e pega o valor do vetor2[j] pra ele, o vetor2[j] agora sem valor algum dentro dele pega o valor do auxiliar	
+	são necessários dois "para" pra ordenar o vetor, o  primeiro "para" é pra comparar os vetores com o segundo "para" exp:
+		para c <-1 ate 3 faca
+		para j <- c + 1 ate 4 faca
+				
+	lembrando que o segundo "para" vai receber o valor de "c" mais 1 e contar desse valor em diante exp:
+		para c <- 1 ate 3 faça
+		para j <- c+1 ate 4 faça
+		
+		vetor(c[1]) vetor(j[2]) vetor(j[3]) vetor(j[4])
+		vetor(c[2]) vetor(j[3]) vetor(j[4])
+		vetor(c[3]) vetor(j[4])
+
+	o c[1] só ira pro c[2], após o j[2] ir ate o j[4], sendo que pra isso o j tem que cumprir as condições do "se" exp:
+		para c <- 1 ate 3 faça
+		para j <- c+1 ate 4 faça
+			se (vetor[c] > vetor[j]) então
+			auxiliar <- vetor[c]
+			vetor[c] <- vetor[j]
+			vetor[j] <- auxiliar
+			
+	o que vai acontecer ai e o seguinte o c[1] vai descer e somar com o "j" do "c+1", que na vez de ser j[1] vai pra j[2] e ir ate j[4] e pra isso ele vai descer pro 	"se" e comparar, "se" o c[1] for maior que j[2] então o "auxiliar" vai roubar o valor do c[1], o c[1] que agora nao tem nada vai roubar o valor do j[2] e o j[2] que 
+	é pilantra vai roubar o  valor do auxiliar o auxiliar que é  burro vai ficar sem nada por que ele e otário, depois que já resolveu com o j[2] vai pro j[3] e vai 	
+	fazer a mesma coisa ate o "j" chegar no j[4], quando o "j" chegar no 4 e o c[1] já estiver com o menor numero dentre os 4, o c[1] vai passar a c[2], e "j" vai 	
+	receber o 	c+1 = 3, e assim o c[2] vai fazer a comparação com o j[3] e j[4] ate o "c" chegar no c[3] e comparar com o j[4], lembrando o "c" nao precisa chegar ate 
+	c[4] pq quando 	efetuar as trocas no segundo "para" o 4 já vai estar com o valor mais alto dentre os 4 então nao e necessário
+	
+ALGORITIMO "VETOR(SUCESSO)"
+
+	Var
+	   vet:vetor[1..10] de inteiro
+	   i, j, auxili:inteiro
+	Inicio
+	      para i<- 1 ate 10 faca
+	             escreva("me informe o ",i, "° numero:")
+	             leia(vet[i])
+	      fimpara
+	      para i <- 1 ate 9 faça
+	           para j <- i+1 ate 10 faça
+	               se (vet[i] > vet[j] ) então
+	                   auxili <- vet[i]
+	                   vet[i] <- vet[j]
+	                   vet[j] <- auxili
+	               fimse
+	           fimpara
+	      fimpara
+	      para i <- 1 ate 10 faça
+	             escreva("[", vet[i], "]")
+	      fimpara
+	Fimalgoritmo
+		EU CONSEGUIR!!
+
+DE VOLTA AO PARA E ESCLARECENDO DUVIDAS
+
+	o "para" e a estrutura de repetição que mais vou usar no VizualG, já que ela e ótima pra cumprir condições, se adicionar somente um "para" ele vai agir de acordo a 	condição proposta mais adicionando 2 ou mais paras então ele vai sair do primeiro "para" e só vai voltar pra ele após concluir todas as condições proposta pelo 	segundo para exp:
+		para c <- 1 ate 4 faca
+			c[1] c[2] c[3] c[4]
+		fimpara
+		
+	esse e um "para" com somente uma "condição", levar o c de [1] ate [4] e o "c" por ser uma variável, inteiro simples, vai ir substituindo-se a cada numero que passar, 	no caso o "c" que guardava 1 no c[1] vai guardar 2 c[2] e o primeiro valor c[1] vai ser esquecido diferente de um vetor(variável composta) que guarda todas as 	condições 	proposta nela exp:
+		vet:vetor[1..5] de inteiro
+		para c <- 1 ate 5 faca
+			escreva("informe um numero")
+			leia(vet[c])
+			usuário digita:
+			vet[c1[5]] vet[c2[6]] vet[c3[7]] vet[c4[9]] vet[c5[7]]
+		fimpara
+		
+	nesse caso o "vet" ganhou 5 espaços que nem em um guarda roupa, onde 5 gavetas vão de [c1] ate [c5] e nele pode guardar "objetos (caractere)", ou "números", no caso 	acima, essas gavetas foram preenchidas por números escolhido pelo usuário, pra preencher com "caractere "é da mesma forma só que na vez de ser "inteiro" você vai 	declarar uma "caractere" e armazenar nas gavetas [c1] a [c5]  
+	
+	quando se usa mais de 2 "para" então vai ter que ser cumprida a condição do segundo para antes de ir pro 1° exp:
+		para c <- 1 ate 5 faça
+			para j <- c+1 ate 6 faça
+				escreva(c+j)
+			fimpara
+		fimpara
+	
+	o "c" vai receber [1] e virar c[1] ele vai descer pro "j", e só vai sair do "j" após cumprir a condição do "j" que é somar c[1] com os 6 valores dentro dele, ai vai 	para o c[2] e o ciclo se repete ate o "c" chegar no c[5]
+
+TABELA DE FUTEBOOL E O USO DO "DIFERENTE"
+
+		Var
+		   vet: vetor[1..3] de caractere
+		   c, j: inteiro
+		Inicio
+		   EscrevaL("-------------------")
+		   EscrevaL(" TABELA DE PARTIDAS")
+		   EscrevaL("-------------------")
+		   escreval("TABELA DE TIME")
+		   
+		   para c <- 1 ate 3 faca
+		      escreva(c,"° TIME: ")
+		      leia(vet[c])
+		   fimpara
+		   
+		   LimpaTela
+		   EscrevaL("-------------------")
+		   EscrevaL(" TABELA DE PARTIDAS")
+		   EscrevaL("-------------------")
+		
+		   para c <- 1 ate 3 faça
+		      para j <- 1 ate 3 faça
+		         se (c <> j ) então
+		            escreval(vet[c]:12, " []  X  [] " , vet[j]:12)
+		         fimse
+		      fimpara
+		   fimpara
+		Fimalgoritmo
+		
+	nesse caso, pra dar resultados sem repetir o próprio time (FLAMENGO X FLAMENGO) e necessário usar o "<>"(diferente) que vai ser responsável por mostrar os números 	sem repeti-los no caso [1 X 2] [1 X 3] / [2 X 1] [2 X 3] / [3 X 1] [3 X 2], e também se usa dois "para" pra mostrar o numero, e ter a diferença no "se"
+
+CADEIRA VAZIA CINEMA
+
+	Var
+	   lugar: vetor[1..19] de caractere
+	   resp: caractere
+	   cadeira: inteiro
+	procedimento cadeiravazia() <------ 11º passo esse procedimento e o responsável por mostrar quais cadeira estão vazias 
+	var
+	   c: inteiro
+	inicio
+	      para c <- 1 ate 10 faça
+	             se (lugar[c] = "") então
+	                escreva("B [",c,"]")
+	             senão
+	                  escreva("----")
+	             fimse
+	      fimpara
+	      escreval(" ")
+	      EscrevaL("------------------------------------------------------------------------")
+	fimprocedimento
+	Inicio
+	      repita <------- 1º passo estrutura de repetição
+	         limpatela
+	         cadeiravazia() <--------- 10º passo criar procedimento 
+	         escreva("Qual você vai querer reservar? B ") <-------- 2º passo pergunta
+	         leia(cadeira)  <--------3º passo ler a resposta
+	         se  (lugar[cadeira] = "") então <---------- 4º se a "gaveta" dentro do vetor esta vazia "então"
+	              lugar[cadeira] <- "X" <-------------- 5º se tiver vazia, adicione um "X"
+	              escreval("Local B",cadeira, " Reservado") <------------- 6º fale que a gaveta do "lugar" já esta reservada
+	         senão <------ 7º passo se a primeira condição nao for completa mostre
+	              escreva("ERRO: local reservado") <------- 8º passo caso a pessoa queira solicitar um lugar reservado então mostrará essa frase
+	         fimse <--------  9º passo fim dessa condição
+	         
+	         escreva("Quer continuar [S/N] ") <------- 12° passo e confirmar a escolha do usuário
+	         leia(resp) <------- 13° ler a resposta dada por ele
+	         ate((resp = "n") ou (resp = "N" )) <-------- 14° se for "n" termina essa estrutura de repetição
+	      
+	Fimalgoritmo
+	
+	1º criar uma estrutura de repetição repita (repita esse programa ate cumprir tal condição)
+	2º foi pedido qual a cadeira seria reservada 
+	3º foi gravada no "cadeira" uma variável simples, nesse caso n precisa de vetor, por que essa variável simples  é só um meio de achar a "gaveta" que vai ser 	preenchida dentro do vetor "lugar"
+	4º deu uma condição se o "lugar[cadeira]" estiver vazio "", então
+	5º se estiver vazio adicione <-- "X" no lugar
+	6º mostre na interface do usuário, que o local está reservado
+	7º caso a pessoa queira reservar o mesmo local então nao vai passar pro "se" e em vez disso vai ir pro "senão"
+	8º quando cair no senão vai mostrar ao usuário que deu ERRO e que o local já esta ocupado
+	9º acaba a estrutura de repetição quando já n resta lugar pra reservar
+	10º criar uma estrutura "procedimento" que vai aparecer no inicio sempre mostrando os locais que já estão e os locais que nao estão ocupados
+	11º dentro desse procedimento, tem uma condição, que é o "se" caso o "local[cadeira]" = ""(vazio) então mostre eles na ordem B[1] B[2] B[3] B[4] B[5], mais "senão" 	estiver vazio então mostre "[---]" no lugar, B[1] ,B[---], B[3], B[4], B[---]
+	12º pede ao usuário se ele vai querer continuar ou nao
+	13° leia a resposta
+	14º termine a estrutura caso a resposta seja "n"
+	
+VARIAVEIS COMPOSTAR HOMOGENIAS MULTIDIMENSIONAIS
+
+	antes a gente tratava o vetor com uma reta que pode ir de 1 ate o que desejar exp
+		n: vetor[1..9] de inteiro
+			n[1] n[2] n[3] n[4]... e assim respectivamente
+			
+	diferente da Variável "matriz"(homogenias multidimensionais ) que agora trabalha com a construção de "linhas"(retas) e "colunas" exp:
+		n1: vetor[1..4, 1..3] de inteiro
+		
+			n[1]   |   |    |
+			n[2]   |   |    |
+			n[3]   |   |    |
+			n[4]   |   |    |
+			     1   2	   3 
+			     
+	foram criadas 4 "linhas" pra 3 "colunas", simplificando essa estrutura e um armário e em cada armazenamento "linha" tem 3 gavetas n[1,1] n[1,2], n[1,3] "colunas"
+	e para preencher essas gavetas do modo primitivo e você atribuindo valores a ela exp: 
+			     
+		n[1,1] <- 3
+		n[1,3] <- 7
+		n{2,3} <- 8
+		n[4,2] <- 1
+		n[3,1] <- 5
+					
+			n[1]  3 |    |  7 |
+			n[2]    |    |  8 |
+			n[3]  5 |    |    |
+			n[4]    |  1 |    |
+			     1    2    3 
+			      
+	e a forma ideal pra ler essas linhas e colunas é usando a ordenação de vetores, já que com a ordenação o usuário tem acesso ao preenchimento dessas "gavetas" exp:
+		var
+			m: vetor[1..3, 1..2] de inteiro
+			l, c: inteiro
+		inicio
+			para l <- 1 ate 3 faça
+				para c <- 1 ate 2 faca
+					leia(m[l,c])
+				fimpara 
+			fimpara
+	
+	a que já n é diferente da ordenação pois o "l" vai entrar no looping como m[l=1] mais na vez de só entrar nesse looping ele vai entrar no looping do c (coluna) 	ficando m[l=1, c=1] e só vai sair do l[1] quando completar o segundo para exp:
+		var
+			m: vetor[1..3, 1..2] de inteiro
+			l, c: inteiro
+		inicio
+			para l <- 1 ate 3 faça
+				para c <- 1 ate 2 faca
+					leia(m[l,c])
+					
+					m[1,1]
+					m[1,2]
+					
+					fim do primeiro para                                         
+					
+					l <- 2                                                          
+					m[2,1]
+					m[2,2]
+					
+					fim do segundo para
+					
+					l <- 3
+					m[3,1]
+					m[3,2]
+					
+					fim dos dois paras
+				fimpara 
+			fimpara
+
+MATRIZ IDENTIDADE:
+
+	uma matriz identidade e quando os algoritmos estão alinhado dentro das "linhas" e "colunas" e uma ordem igualitária exp
+		
+		[1,1]{2,1}{3,1}
+		{1,2}[2,2]{3,2}
+		{1,3}{2,3}[3,3] 
+		
+	os que estão entre "[ ]" e o que identifica a identidade de uma matriz fica fácil de entender quando você substituem as linhas e colunas por 0 e 1
+		
+		[1] {0} {0}
+		{0} [1] {0}
+		{0} {0} [1] 
+	
+	e assim e feita uma identidade de matriz onde a ordem e sempre igual sem mudanças independente da quantidade de matrizes tenha ela sempre se manterá com 3 "0" de 	espaçamento entre cada "1" identidade 
+	
+	Algoritmo "MATRIX INDENTIDADE"
+
+			Var
+			   matriz: vetor[1..4,1..4] de inteiro
+			   l, c: inteiro
+			Inicio
+			      para l <- 1 ate 4 faça
+			             para c<- 1 ate 4 faça
+			                    se (l = c) então
+			                       matriz[l,c] <- 1
+			                    senao
+			                       matriz[l,c] <- 0
+			                    fimse
+			             fimpara
+			      fimpara
+			      para l <- 1 ate 4 faça
+			             para c<- 1 ate 4 faça
+			                    escreva(matriz[l,c]:3)
+			             fimpara
+			             escreval()
+			      fimpara
+			Fimalgoritmo
