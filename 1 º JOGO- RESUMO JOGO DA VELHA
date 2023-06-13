@@ -1,0 +1,406 @@
+autor do codigo: gustavo guanabara
+fonte: Curso em video
+
+autor do resumo: joao gabriel 
+descrição: o codigo do jogo da velha nao e meu, porem destrinchei ele para um melhor entendimento, fiz um passo a passo de como esse jogo opera
+
+Algoritmo "jogo da velha"
+
+Var
+   velha:vetor[1..3,1..3] de caractere
+   linha, coluna, cont, posicao: inteiro
+   símbolo: caractere
+   resposta: logico
+   
+procedimento mostravelha() (6º) <---------- procedimento que mostra a interface
+inicio
+      para linha <- 1 ate 3 faça
+             para coluna <- 1 ate 3 faça
+                 Escreva("|  ", velha[linha,coluna]:1)
+             fimpara
+             Escreva("|")
+             escreval()
+             EscrevaL("+---+---+---+")
+      fimpara
+
+fimprocedimento
+
+funcao jogar(Rosiçao:caractere, Posiçao:caractere)logico (11º) <------- função que vai entrar na "resposta: logico"
+var
+   mudou:logico
+inicio
+    mudou <- falso
+      Para linha <- 1 ate 3 faca
+         Para coluna <- 1 ate 3 faca
+            Se(velha[linha,coluna] = NumpCarac(Posiçao)) então
+               velha[linha,coluna] <- S
+               mudou <- verdadeiro
+            FimSe
+         FimPara
+      FimPara
+      Retorne mudou
+fimfuncao
+
+Procedimento mudajogador() (17º) <---- condição para a troca de jogador
+inicio
+   Se (Simb = "X") então
+      Simb <- "O"
+   senao
+      Simb <- "X"
+   FimSe
+FimProcedimento
+
+Funcao terminouvelha(): Logico (23º) <- aqui vai ver se ouve empate, ou se o "X" ganhou ou se o "O"
+Var
+  terminou: Logico
+  ocorr: Inteiro
+inicio
+   terminou <- falso
+   // Jogos em linha
+   Para linha <- 1 ate 3 faca
+      Se (velha[linha,1] = velha[linha,2]) e (velha[linha,2] = v[linha,3]) então
+         terminou <- verdadeiro
+      FimSe
+   FimPara
+   
+   // Jogos em coluna
+   Para coluna <- 1 ate 3 faca
+      Se (velha[1,coluna] = velha[2,coluna]) e (velha[2,coluna] = velha[3,coluna]) então
+         terminou <- verdadeiro
+      FimSe
+   FimPara
+   
+   // Jogos em diagonal
+   Se (velha[1,1] = velha[2,2]) e (velha[2,2] = velha[3,3]) então
+      terminou <- verdadeiro
+   FimSe
+   Se (velha[1,3] = velha[2,2]) e (velha[2,2] = velha[3,1]) então
+      terminou <- verdadeiro
+   FimSe
+   
+   // se der  VELHA
+   ocorr <- 0
+   Para linha <- 1 ate 3 faca
+      Para coluna <- 1 ate 3 faca
+         Se (velha[linha, linha] <> "X") e (velha[linha,coluna] <> "O") então
+            ocorr <- ocorr + 1
+         FimSe
+      FimPara
+   FimPara
+   Se (ocorr = 0) então
+      terminou <- verdadeiro
+   FimSe
+
+   // Retorna se o jogo acabou ou nao
+   Retorne terminou
+FimFuncao
+
+
+inicio
+      cont <- 1 (1º) <-------- contador começa com 1
+      símbolo <- "X" (8º) <------- jogador X 
+      para linha <- 1 ate 3 faça (2º) <-------- e criado a linha da Matriz
+             para coluna<- 1 ate 3 faça (3º) <------ e criado sua coluna 3x3
+             velha[linha,coluna] <- numpcarac(cont) (4º) <------- velha[1,1] recebe numpcarac(o valor que entra dentro dele se tornara caractere)
+             cont <- cont +1  (4.1º) <------ cont sobe pra velha[1,2] valendo = 2 
+             escreva(velha[linha,coluna])
+             fimpara
+      fimpara
+      
+	mostravelha()  (5º)<--------- procedimento mostra a interface
+	
+	 repita (21º) <------- repetir o repita ate (terminouvelha ser verdadeiro)
+            repita(7º) <------- repetir a pergunta ate (Resposta ser verdadeiro) caso nao for verdadeiro repita <- (15º) <- (22°) agora ele entra como outro usuario
+              EscrevaL("Vai jogar [", simb:1, "] em qual posiçao? ") (9º)   <----- pergunta ao jogador símbolo= "X" qual casa ele escolhe de 1 a 9 
+              leia(posiçao) 
+              Resposta (º12) <- jogar[simbolo,posiçao] (10º) <------- depois de fazer a pergunta vai subir pra função jogar
+              Se (Resposta = falso) então (13º) <-------- a que ele bota uma condição 
+                 EscrevaL("JOGADA INVALIDA!")
+              FimSe
+            ate (Resposta verdadeiro) (14º)
+            mudarjogador()  (16º) <------ novo procedimento para a troca de usuário de "X" pra bola
+            limpatela (18º) <---------- exclui a antiga interface que já foi escolhida pelo jogador "X"
+            mostravelha() (19º) <-------- mostra novamente a interface
+      ate (terminouvelha = verdadeiro) (20º) <--- ele vai confirmar se o terminou velha tá verdadeiro 
+Fimalgoritmo
+
+
+1- o contador começa com 1 
+	
+					cont <- 1
+
+2- cria a "linha" dentro da primeira matriz, as "gavetas" que cada vetor vai ter, elas são responsáveis por preencher as gavetas vazias dentro da matriz 3x3
+							    primeira linha
+							     +---+---+---+
+								 1 |   |   |   |  <- linha
+								   +---+---+---+
+							   
+							    segunda linha
+							     +---+---+---+
+								 2 |   |   |   |  <- linha
+								   +---+---+---+
+								   
+	                terceira linha
+								   +---+---+---+
+								 3 |   |   |   |  <- linha
+								   +---+---+---+
+							
+3- cria a "coluna", responsável por determinar a quantidade de gavetas que terá cada linha
+								   +---+---+---+
+								 1 |   |   |   |  <- linha                              linha[1,coluna[1]]
+								   +---+---+---=                                        linha[1,coluna[2]]
+								 2 |   |   |   |  <- linha                              linha[1,coluna[3]] 
+								   +---+---+---+
+								 3 |   |   |   |  <- linha
+								   +---+---+---+
+									1   2   3	<- coluna	
+
+3.1- tanto coluna como linha entra dentro do "velha" que tem a matriz 3x3, lembrando a matriz está vazia ela vai de um ate 9
+
+					 linha[1,coluna[1]]    linha[2,coluna[1]]    linha[3,coluna[1]]
+					 linha[1,coluna[2]]    linha[2,coluna[2]]    linha[3,coluna[2]]	
+           linha[1,coluna[3]]    linha[2,coluna[3]]    linha[3,coluna[3]]
+
+4- quando passa pelos dois "paras" ele vai ir preenchendo as "gavetas" vazias da matriz com o cont
+					 
+					 cont <- 1
+					 velha[linha,coluna] <- numpcarac(cont)
+					 cont <- cont +1
+					 
+					linha[1,coluna[1]] <- cont 1   linha[2,coluna[1]] <-cont 4   linha[3,coluna[1]] <- cont 6
+					linha[1,coluna[2]] <- cont 2   linha[2,coluna[2]] <-cont 5   linha[3,coluna[2]] <- cont 7
+					linha[1,coluna[3]] <- cont 3   linha[2,coluna[3]] <-cont 6   linha[3,coluna[3]] <- cont 8
+
+					 
+4.1- lembrando o cont já começa com 1, fora da repetição no inicio, então ele só soma com +1 do segundo em diante, o numpcarac e o responsável por passar os números do "cont" para a velha em formato de caractere ou seja quando o valor esta no "cont" ele ainda e inteiro mais passa pra dentro da matriz sendo caractere e assim completa as 9 gavetas da matriz com numero de 1 a 9
+
+						inicio 
+						cont <- 1(inteiro)
+						  para linha <- 1 ate 3 faça
+					             para coluna<- 1 ate 3 faça
+					             	velha[linha,coluna] <- numpcarac(cont(caractere))
+					             	cont <- cont +1
+					             fimpara
+					      fimpara
+						
+5- depois de ter preenchido a matriz com os números é necessário mostrar a interface que o usuário vai interagir, pra isso você cria um procedimento pra mostrar essa interface
+
+		mostravelha()
+		
+6- a criação dessa interface e a mesma só que na vez de preencher com números ela vai criar as "|" que vão auxiliar na separação dos números dando o aspecto de um jogo da velha a segunda parede a do lado do " Escreva(" |  ", velha[linha,coluna]:1)" só aparece 
+
+	                                    
+	                                    
+	                                   procedimento mostravelha()
+		               primeira linha     inicio
+								     +---+---+---+      EscrevaL("+---+---+---+")
+							  	 1 | 1 | 2 | 3 |      Escreva(" |  ", velha[linha,coluna]:1)	 escreva("|")						 
+									   +---+---+---+      EscrevaL("+---+---+---+")
+								                     fimprocedimento
+								    segunda linha
+								     +---+---+---+    
+									 2 | 4 | 5 | 6 |
+									   +---+---+---+
+								
+		                terceira linha
+									   +---+---+---+
+									 3 | 7 | 8 | 9 |  
+									   +---+---+---+
+								                     
+								   
+7-vamos fazer primeiro o 2º repita, já que o 1º repita e a condição de funcionamento do 2º repita, no caso o 1º repita vai repetir ate que as lacunas do jogo da velha já tenha sido preenchida ai acaba o jogo, 
+					
+					 repita
+				              EscrevaL("Vai jogar [", simb:1, "] em qual posicao? ")
+				              leia(posiçao)
+				              Resposta <- jogar[simbolo,posiçao]
+				   ate ....
+									
+8- símbolo recebe "X" lá no inicio do algoritmo, aonde está o cont
+					
+					inicio
+					cont <- 1
+					símbolo <- "X"
+
+9- pergunta ao usuário "X" em qual casa ele vai querer jogar:
+								
+							     +---+---+---+    
+								   | 1 | 2 | 3 |
+								   +---+---+---+   
+								   | 4 | 5 | 6 |
+								   +---+---+---+    
+								   | 7 | 8 | 9 |
+								   +---+---+---+
+								   
+						  EscrevaL("Vai jogar [", simb:1, "] em qual posicao? ")
+						  
+						  Vai jogar [X] em qual posicao?: 1
+
+10- a escolha do usuário vai ser jogado pra dentro de uma funcao que após ser resolvida, vai jogar o resultado pra dentro do "resposta", o "jogar" e a funcao que vai pegar o resultado do símbolo, posição
+
+						Vai jogar [X] em qual posicao?: 1
+						leia(posiçao)
+						Resposta <- jogar[simbolo,posiçao]
+						Resposta <- jogar["X",1]
+
+11- vai iniciar uma função com 2 algoritmos "caractere" um pra guardar o valor do "símbolo", e o outro pra guardar o valor da "posiçao", logo após ser criado esses dois valores, e vai voltar o resultado resolvidos desses valores em um valor logico
+
+	funcao jogar(Rosiçao:caractere, Posiçao:caractere)(logico <------- função resolvida vai voltar logico e  entrar na "resposta: logico")
+
+11.1- agora vc cria um uma variável logico "mudou", toda vez que entrar nessa funcao o "mudou" inicia "off" e só fica "on" após cumprir as condições:
+
+				            funcao jogar(Simb:caractere, Posi:caractere)logico
+							var
+							   mudou:logico
+							inicio
+							    mudou <- falso
+							      Para linha <- 1 ate 3 faca
+							         Para coluna <- 1 ate 3 faca
+							         
+							            Se(velha[linha,coluna] = NumpCarac(Posi)) então
+							               velha[linha,coluna] <- Simb
+							               mudou <- verdadeiro
+							            FimSe
+							         FimPara
+							      FimPara
+							      Retorne mudou
+							fimfuncao
+				
+				1- entra na função jogar onde o Simb <- o valor do símbolo e o Posi <- o valor do posiçao
+				2- cria uma variável logico
+				3- inicia o algoritmo
+				4-mudou recebe falso
+				5-cria a matriz velha com os 2 paras
+				6- se a matriz velha[1,1] for igual ao numero caractere (1) <- escolhido previamente pelo usuário no 10° passo, então velha[1,1] que já tem valor 1 				dentro dessa gaveta <- preenchida no 4º passo, vai ser substituída e trocada pelo caractere "X" que esta dentro do "Simb", e o "mudou" passa a ser      				verdadeiro, já que realmente mudou um valor dentro dele
+				7- acabar os "paras" já que ele vai procurar e numero escolhido pelo usuário em todas as gavetas o valor 1 esta na gaveta [1,1], então nao precisou 				repetir nas 9 gavetas mais se o usuário desse "6" ia passar pelas gavetas [1,1] [1,2] [1,3] ate chegar aonde esta armazenado o valor "6" que e a 				[2,3]
+				8- retorna o valor "mudou" lá pro resposta que e o (12º) passo
+				Resposta <- jogar[simbolo,posiçao]
+
+12- resposta
+
+13- se a pessoa digitar a mesma casa que o outro usuário já digitou então a resposta do usuário vai pra função "jogar" e vai voltar como "falsa" já que pra ela voltar como verdadeiro ela tem que cumprir as condições do "se" dentro da função
+
+				  Se (velha[linha,coluna] = NumpCarac(Posi)) então
+					velha[linha,coluna] <- Simb
+					mudou <- verdadeiro
+				  FimSe
+				  
+				  fora da função
+				  
+				  Se (Resposta = falso) então
+                 		EscrevaL("JOGADA INVALIDA!")
+				  fimse
+
+14- ele vai repetir ate a resposta ser igual a "verdadeiro" no caso, o que vai acontecer e o seguinte, caso o usuário "X" digite um valor que nao foi digitado pelo usuário "O" então a variável "Resposta" vai ser "verdadeira" e vai acabar esse segundo "repita" e só vai voltar pro 2º repita quando mudar para "outrousuario" que vai ser executado logo após a confirmação "verdadeira" do "Resposta", caso contrario, e o jogador "X" digite uma casa que já esta ocupada pelo usuário "O" então vai ser repetido a função "jogar" ate 	"Resposta " sair de "falso" pra "verdadeiro"
+
+15- caso o repita seja verdadeiro então ele será o 7 passo a ser executado, na ordem, e caso o "resposta" seja "falso", então ele vai repetir esse passo novamente ate o usuário escolher uma casa sem "dono"
+
+16- se cria um novo procedimento para a troca de usuário antes "X" agora "O"
+
+17- após a confirmação da "Resposta", vai entrar no procedimento mudajogador() e lá vai cair na condição "se"
+
+					Procedimento mudajogador()
+				inicio
+				   Se (simbolo = "X") então
+				      simbolo <- "O"
+				   senao
+				      Simb <- "X"
+				   FimSe
+				FimProcedimento
+
+18- limpa a tela escolhida na 1º jogada 
+
+19- mostra novamente a interface
+
+20- pra fazer a confirmação de que terminou o jogo é preciso criar um procedimento "terminouvelha()",que confirma se todas as casas estão preenchidas, se preencher todas casas sem completar uma linha ou coluna com os mesmos símbolos e "empate" se o "X" preencher todas as casas na ordem é "vitória X" ou se foi o "O" que preencheu tudo na mesma ordem então é vitória "O"
+				
+				 
+			  +---+---+---+                 +---+---+---+                      +---+---+---+  
+			  | O | X | O |                 | X | O | O |                      | O | O | O |
+			  +---+---+---+                 +---+---+---+                      +---+---+---+  
+			  | X | O | X |                 | O | X | O |                      | X | O | X |
+			  +---+---+---+                 +---+---+---+                      +---+---+---+    
+			  | X | O | X | <- empate       | O | X | X |  <- vitória "X"      | O | X | X | <-vitória "O"
+			  +---+---+---+                 +---+---+---+                      +---+---+---+
+			  
+			 caso  as casas nao estejam completas então ela vai mostrar a interface "mostravelha" e vai voltar pro 2º repita, o "terminovellha()" que e a condição de 			 termino vai ser explicada futuramente
+			 
+21-o algoritmo vai voltar pro 1° repita, só que agora como o usuário "O" que e o segundo usuário
+
+22- vou explicar o funcionamento integral do segundo repita
+
+			7º passo, no 7º passo, ele vai entrar pela primeira vez  sendo o usuário "X"
+			vai ser feito os outros passos ate finalizar o repita no "ate(resposta = verdadeiro)"
+						
+			depois de ser feito isso vai descer pros determinados passos mudarjogador(), limpatela, mostravelha()
+			
+			caso o usuário decida escolher uma casa já preenchida com "X" ou "O"
+			então o repita vai entrar no 15º passo e repetir a pergunta ate o determinado usuário escolher uma casa vazia
+
+			após tudo isso se chega no 22º passo onde vai repetir esse 2º repita só que com o usuário "O", vai ficar trocando o usuário ate satisfazer a condição no  			primeiro repita visto no 20º passo 
+
+23 <- terminouvenha e a que que tem a condição principal para terminar esse código
+	          
+	       		Funcao terminouvelha(): Logico
+					Var
+					  terminou: Logico
+					  ocorrencia: Inteiro
+					inicio
+					   terminou <- falso
+					   
+					   //jogo em linha
+					   Para linha <- 1 ate 3 faca
+					      Se (velha[linha,1] = velha[linha,2]) e (velha[linha,2] = v[linha,3]) então
+					         terminou <- verdadeiro
+					      FimSe
+					   FimPara
+					   
+				1- cria procedimento logico
+				2- cria o "terminou" do tipo logico que vai confirmar se terminou nas condições
+				3- cria ocorrencia que vai ser usado caso dê velha ou "empate"
+				4- o "terminou" começa como off, falso
+				5- entra na estrutura de repetição pra criar a matriz "velha"
+				6- se a matriz "velha" na linha [1,1][1,2][1,3] ou qualquer outras [1,1][2,1][3,1] linhas estiver iguais no caso |X||X||X|
+				então "terminou" sobe pro "terminouvelha" e "terminouvelha" recebe verdadeiro assim completando a condição do 20º passo que e a finalização do jogo e 				vitória do usuário
+				7- se a vitória nao for em linha reta então
+				
+				        // Jogos em coluna
+					   Para coluna <- 1 ate 3 faca
+					      Se (velha[1,coluna] = velha[2,coluna]) e (velha[2,coluna] = velha[3,coluna]) entao
+					         terminou <- verdadeiro
+					      FimSe
+					   FimPara
+					   
+				8- se a vitória n for feito em "linha" pode ser feito na coluna exp  |X|
+				                                                                     |X|
+				                                                                     |X|
+				                                                                     
+				9- se a vitória nao for em nenhum dos dois acima então
+				
+					   // Jogos em diagonal 
+					   Se (velha[1,1] = velha[2,2]) e (velha[2,2] = velha[3,3]) então
+					      terminou <- verdadeiro
+					   FimSe
+					   Se (velha[1,3] = velha[2,2]) e (velha[2,2] = velha[3,1]) então
+					      terminou <- verdadeiro
+					   FimSe
+					   
+				10-e se a vitória nao for decidida nem na linha, diagonal ou coluna então
+					   
+					   // se der  VELHA
+					   ocorr <- 0
+					   Para linha <- 1 ate 3 faca
+					      Para coluna <- 1 ate 3 faca
+					         Se (velha[linha, linha] <> "X") e (velha[linha,coluna] <> "O") então
+					            ocorr <- ocorr + 1
+					         FimSe
+					      FimPara
+					   FimPara
+					   Se (ocorr = 0) então
+					      terminou <- verdadeiro
+					   FimSe
+					   Retorne terminou
+					FimFuncao
+					
+				11- vai dar velha e retornar valor verdadeiro assim terminando o algoritmo
+
